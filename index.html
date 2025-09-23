@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes and Horizons</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Echoes and Horizons</h1>
+    <button id="admin-login-btn">Admin Login</button>
+    <button id="logout-btn" style="display:none;">Logout</button>
+  </header>
+
+  <main>
+    <!-- 🔍 Search bar -->
+    <section id="search-section">
+      <input type="text" id="search-box" placeholder="Search poems...">
+    </section>
+
+    <!-- 📜 Poem list -->
+    <section id="poem-list" class="poem-list">
+      <!-- Poems will load here dynamically -->
+    </section>
+
+    <!-- 🛠️ Admin panel -->
+    <section id="admin-panel" style="display:none;">
+      <h2>Add / Edit Poem</h2>
+      <input type="text" id="poem-title" placeholder="Poem Title">
+      <textarea id="poem-content" placeholder="Poem Content"></textarea>
+      <button id="save-poem">Save Poem</button>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
