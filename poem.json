@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "The Dawn",
+    "content": "When the sun breaks the night,\nHope rises with its light...",
+    "likes": 0
+  },
+  {
+    "id": "2",
+    "title": "My Cry",
+    "content": "They say the end of the world is nigh\nAnd I want to go to heaven when I die\nI lift my eyes to look up high,\nSeeking comfort in the sky...",
+    "likes": 0
+  },
+  {
+    "id": "3",
+    "title": "Silent Echo",
+    "content": "Through the valleys deep and wide,\nWhispers of dreams still collide...\nAn echo drifts, soft and slow,\nCarrying truths we may not know...",
+    "likes": 0
+  }
+]
