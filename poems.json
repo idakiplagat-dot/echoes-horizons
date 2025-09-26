@@ -1,21 +1,26 @@
 [
   {
     "id": "1",
-    "title": "The Dawn",
-    "content": "When the sun breaks the night,\nHope rises with its light...",
+    "title": "Home",
+    "content": "Beneath the sky so wide,\nI found my voice again.\nA whisper turned to echoes,\nCarried by the wind.",
     "likes": 0
   },
   {
     "id": "2",
-    "title": "My Cry",
-    "content": "They say the end of the world is nigh\nAnd I want to go to heaven when I die\nI lift my eyes to look up high,\nSeeking comfort in the sky...",
+    "title": "Echoes in the Wind",
+    "content": "Whispers drift through the canyon of my heart,\nLingering like forgotten songs,\nThey speak of horizons yet unseen,\nAnd dreams still unfolding.",
     "likes": 0
   },
-  
   {
     "id": "3",
-    "title": "Silent Echo",
-    "content": "Through the valleys deep and wide,\nWhispers of dreams still collide...\nAn echo drifts, soft and slow,\nCarrying truths we may not know...",
+    "title": "Silent Shores",
+    "content": "The ocean holds its breath at dawn,\nWaiting for the sun to rise.\nEach wave a memory,\nEach tide a promise kept.",
+    "likes": 0
+  },
+  {
+    "id": "1758800695276",
+    "title": "My Cry",
+    "content": "They say the end of the world is nigh\nAnd I want to go to heaven when I die\nI lift my eyes to look up on high\nAnd bid the world a quick bye\nI search to behold his compassionate eye\nBut His face turns away with a sigh\nBecause the life I lived was a lie",
     "likes": 0
   }
 ]
