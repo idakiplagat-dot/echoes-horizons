@@ -1,26 +1,20 @@
 [
   {
     "id": "1",
-    "title": "Home",
-    "content": "Beneath the sky so wide,\nI found my voice again.\nA whisper turned to echoes,\nCarried by the wind.",
-    "likes": 0
+    "title": "The Dawn",
+    "content": "When the sun breaks the night,\nHope rises with its light...",
+    "image": "image_hero.jpg"
   },
   {
     "id": "2",
     "title": "Echoes in the Wind",
-    "content": "Whispers drift through the canyon of my heart,\nLingering like forgotten songs,\nThey speak of horizons yet unseen,\nAnd dreams still unfolding.",
-    "likes": 0
+    "content": "Whispers drift through the canyon of my heart,\nLingering like forgotten songs...",
+    "image": "image_boat.jpg"
   },
   {
     "id": "3",
     "title": "Silent Shores",
-    "content": "The ocean holds its breath at dawn,\nWaiting for the sun to rise.\nEach wave a memory,\nEach tide a promise kept.",
-    "likes": 0
-  },
-  {
-    "id": "1758800695276",
-    "title": "My Cry",
-    "content": "They say the end of the world is nigh\nAnd I want to go to heaven when I die\nI lift my eyes to look up on high\nAnd bid the world a quick bye\nI search to behold his compassionate eye\nBut His face turns away with a sigh\nBecause the life I lived was a lie",
-    "likes": 0
+    "content": "The ocean holds its breath at dawn,\nWaiting for the sun to rise...",
+    "image": "image_cosmic.jpg"
   }
 ]

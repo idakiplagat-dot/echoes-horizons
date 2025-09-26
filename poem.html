@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poem - Echoes & Horizons</title>
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="poem.js"></script>
 </head>
 <body>
-  <header class="hero-mini">
-    <div style="padding:1rem 1rem;">
-      <a href="index.html" style="color:var(--gold); text-decoration:none; font-weight:700;">← Back to Archive</a>
-    </div>
-  </header>
-
-  <main class="poem-page">
-    <section id="poem-container">Loading poem...</section>
-    <div id="nav-buttons" aria-hidden="false">
-      <button id="btn-back">⬅️ Back</button>
-      <button id="btn-prev">⬅️ Previous</button>
-      <button id="btn-home">🏠 Home</button>
-      <button id="btn-next">Next ➡️</button>
-    </div>
-  </main>
-
-  <script src="poem.js"></script>
+  <div class="poem-nav">
+    <button onclick="goHome()">🏠 Home</button>
+    <button onclick="goPrev()">⬅️ Previous</button>
+    <button onclick="goNext()">➡️ Next</button>
+  </div>
+  <main id="poem-container" class="poem-view"></main>
 </body>
 </html>

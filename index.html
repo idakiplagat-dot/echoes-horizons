@@ -1,54 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Echoes & Horizons</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
 </head>
 <body>
-  <!-- HERO -->
-  <header class="hero" id="hero">
+  <!-- Hero Section -->
+  <header class="hero">
     <div class="hero-overlay">
-      <div class="hero-inner">
-        <img src="images/logo.svg" alt="Echoes & Horizons logo" class="logo" onerror="this.style.display='none'">
-        <h1 class="site-title">Echoes & Horizons</h1>
-        <p class="tagline">“Whispers carried beyond the edge of time”</p>
-        <div class="hero-actions">
-          <button id="enterBtn" class="btn-primary">Enter the Archive</button>
-        </div>
-      </div>
+      <h1>Echoes & Horizons</h1>
+      <p class="tagline">“The depth of gratitude is measured by the echoes of a humble heart”</p>
+      <a href="#archive" class="btn">Enter the Archive</a>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main id="content" class="container">
-    <section class="controls">
-      <input id="searchBar" type="search" placeholder="Search poems, phrases, words..." aria-label="Search poems">
-      <button id="adminLoginBtn" class="btn-ghost">Admin Login</button>
-    </section>
+  <!-- Search -->
+  <section class="search-section">
+    <input type="text" id="search" placeholder="Search poems, phrases, words..." />
+  </section>
 
-    <section id="poem-list" class="poem-list" aria-live="polite">
-      <!-- poem cards inserted here -->
-      <p class="muted">Loading poems…</p>
-    </section>
+  <!-- Admin -->
+  <div class="admin-btn">
+    <button onclick="window.location.href='admin.html'">Admin Login</button>
+  </div>
 
-    <!-- ADMIN PANEL (hidden until login) -->
-    <section id="admin-panel" class="admin-panel" style="display:none;">
-      <h2>Admin — Add Poem</h2>
-      <input id="poem-title" type="text" placeholder="Poem Title" />
-      <textarea id="poem-content" rows="6" placeholder="Poem content (use line breaks)"></textarea>
-      <div class="admin-actions">
-        <button id="savePoemBtn" class="btn-primary">Save Poem (download JSON)</button>
-        <button id="showSnippetBtn" class="btn-ghost">Show JSON Snippet</button>
-      </div>
-      <div id="admin-message" class="admin-message" aria-live="polite"></div>
-    </section>
-  </main>
-
-  <script src="./scripts.js"></script>
+  <!-- Poems -->
+  <main id="archive" class="poems-container"></main>
 </body>
 </html>
-
-
-

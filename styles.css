@@ -1,235 +1,115 @@
-/* ======================= Base ======================= */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root{
-  --bg:#0b0f14;
-  --muted:#9aa3b2;
-  --gold:#ffcc70;
-  --card:#111418;
-  --glass: rgba(255,255,255,0.04);
-}
-body{
-  font-family: Georgia, "Times New Roman", serif;
-  background: linear-gradient(180deg,#05060a 0%, #0b0f14 100%);
-  color: #f3f4f6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  min-height:100vh;
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #0c0c0c;
+  color: #f0f0f0;
 }
 
-/* ======================= HERO ======================= */
-.hero{
-  position: relative;
-  height: 56vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.25), rgba(0,0,0,0.55)), #081018;
-  background-size:cover;
-  background-position:center;
-}
-
-/* if you provided an image at images/stars.jpg it'll overlay */
+/* Hero Banner */
 .hero {
-  background-image:
-    linear-gradient(180deg, rgba(6,10,16,0.35), rgba(4,6,10,0.6)),
-    url('images/stars.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  height: 70vh;
+  background: url("image_hero.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero-overlay{
-  width:100%;
-  padding: 3rem 1rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.hero-inner{
-  text-align:center;
-  max-width:900px;
-  background: linear-gradient(180deg, rgba(8,10,12,0.18), rgba(8,10,12,0.12));
-  border-radius: 12px;
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
   padding: 2rem;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 15px;
 }
 
-.logo{
-  width:62px;
-  height:62px;
-  object-fit:contain;
-  margin-bottom: 0.6rem;
-  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.6));
+.hero h1 {
+  font-size: 3rem;
+  color: #ffcc70;
 }
 
-.site-title{
-  font-size: 2.6rem;
-  letter-spacing:2px;
-  margin-bottom: 0.4rem;
-  color:var(--gold);
+.tagline {
+  font-style: italic;
+  margin-top: 0.5rem;
 }
 
-.tagline{
-  color: #dfe7ea;
-  opacity:0.9;
-  margin-bottom: 1rem;
-  font-style:italic;
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #6c63ff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
-/* hero action button */
-.btn-primary{
-  background: linear-gradient(90deg,#3b6ad6,#6b4cf6);
-  color:white;
-  padding:.6rem 1rem;
-  border-radius:10px;
-  border:none;
-  cursor:pointer;
-  font-weight:600;
-  transition: transform .15s ease, box-shadow .15s;
-}
-.btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 10px 30px rgba(72,61,139,0.18); }
-
-/* ghost button */
-.btn-ghost{
-  background: transparent;
-  color: var(--gold);
-  padding:.45rem .8rem;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.06);
-  cursor:pointer;
+.btn:hover {
+  background: #574fd6;
 }
 
-/* ======================= MAIN LAYOUT ======================= */
-.container{
-  max-width: 1000px;
-  margin: -4rem auto 4rem;
+/* Search */
+.search-section {
+  text-align: center;
   padding: 1rem;
 }
 
-/* controls (search + admin) */
-.controls{
-  display:flex;
-  gap:1rem;
-  align-items:center;
-  margin-bottom:1.2rem;
+#search {
+  padding: 0.8rem;
+  width: 60%;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
 }
-#searchBar{
-  flex:1;
-  padding:.8rem 1rem;
-  border-radius:10px;
-  background: var(--glass);
-  border: 1px solid rgba(255,255,255,0.03);
+
+/* Admin */
+.admin-btn {
+  margin: 1rem;
+  text-align: left;
+}
+
+.admin-btn button {
+  background: #333;
   color: #fff;
-  font-size:1rem;
-  outline:none;
-}
-#searchBar::placeholder{ color: var(--muted); }
-
-/* ======================= POEM LIST (cards) ======================= */
-.poem-list{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:1rem;
-}
-.poem-card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius:12px;
-  padding:1rem;
-  border: 1px solid rgba(255,255,255,0.03);
-  box-shadow: 0 8px 24px rgba(2,6,10,0.6);
-  transition: transform .18s ease, box-shadow .18s;
-  display:flex;
-  flex-direction:column;
-  gap:.6rem;
-}
-.poem-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(2,6,10,0.7);
-}
-.poem-thumb{
-  width:100%;
-  height:140px;
-  object-fit:cover;
-  border-radius:10px;
-}
-.poem-card h3{
-  font-size:1.1rem;
-  color:var(--gold);
-  margin-top:0.2rem;
-}
-.poem-card p{
-  color:var(--muted);
-  font-size:.95rem;
-  line-height:1.45;
-  flex:1;
-}
-.card-actions{
-  display:flex;
-  justify-content:space-between;
-  gap:.5rem;
-  margin-top:.6rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
 }
 
-/* read more link */
-.read-more{
-  background: transparent;
-  color: #dfe7ea;
-  text-decoration:none;
-  border: 1px solid rgba(255,255,255,0.04);
-  padding:.45rem .6rem;
-  border-radius:8px;
+.admin-btn button:hover {
+  background: #555;
 }
 
-/* ======================= ADMIN PANEL ======================= */
-.admin-panel{
-  margin-top:2rem;
-  padding:1rem;
-  border-radius:10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border:1px solid rgba(255,255,255,0.03);
+/* Poems */
+.poems-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
 }
-.admin-panel input, .admin-panel textarea{
-  width:100%;
-  padding:.7rem;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.03);
-  background: rgba(255,255,255,0.02);
-  color: #fff;
-  margin-bottom:.6rem;
-}
-.admin-actions{ display:flex; gap:.6rem; align-items:center; }
-.admin-message{ margin-top:.6rem; color:var(--muted); font-size:.95rem; white-space:pre-wrap; }
 
-/* ======================= POEM DETAIL (poem.html) ======================= */
-.poem-page {
-  max-width:900px;
-  margin: 2rem auto;
+.poem-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+}
+
+.poem-card:hover {
+  transform: scale(1.03);
+}
+
+.poem-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.poem-content {
   padding: 1rem;
 }
-#poem-container{
-  background: linear-gradient(180deg,#0f1416,#0b0f12);
-  padding:2rem;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.03);
-}
-#poem-container h2{ color:var(--gold); margin-bottom:1rem; font-size:2rem; }
-.poem-content{ color:#e9eef2; white-space:pre-line; font-size:1.15rem; line-height:1.8; }
 
-/* nav buttons style used in poem.html */
-#nav-buttons { display:flex; justify-content:center; gap:1rem; margin-top:1rem; }
-#nav-buttons button{ padding:.6rem 1rem; border-radius:8px; border:none; cursor:pointer; background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.03); }
-#nav-buttons button:disabled{ opacity:.35; cursor:not-allowed; }
-
-/* small helpers */
-.muted{ color:var(--muted); text-align:center; padding:2rem 0; }
-a { color: inherit; text-decoration: none; }
-
-/* responsive */
-@media (max-width:600px){
-  .site-title{ font-size:1.9rem; }
-  .hero{ height: 46vh; }
-  .poem-thumb{ height:110px; }
+.poem-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffcc70;
 }
