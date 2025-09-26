@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Poem - Echoes and Horizons</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -12,17 +12,21 @@
   </header>
 
   <main>
-  <section id="poem-container">Loading poem...</section>
-  <div id="nav-buttons">
-    <button onclick="goBack()">⬅️ Back</button>
-    <button onclick="goPrev()">⬅️ Previous</button>
-    <button onclick="goHome()">🏠 Home</button>
-    <button onclick="goNext()">Next ➡️</button>
-  </div>
-</main>
-  
+    <section id="poem-container">Loading poem...</section>
+
+    <div id="nav-buttons" style="margin-top:1.5rem; text-align:center;">
+      <button id="btn-back">⬅️ Back</button>
+      <button id="btn-prev">⬅️ Previous</button>
+      <button id="btn-home">🏠 Home</button>
+      <button id="btn-next">Next ➡️</button>
+    </div>
+  </main>
+
+  <!-- plain script (not a module) -->
   <script src="poem.js"></script>
 </body>
 </html>
+
+
 
 
