@@ -3,7 +3,8 @@ let poems = [];
 // Load poems from poems.json
 async function loadPoems() {
   try {
-    const response = await fetch("poems.json");
+    const response = await fetch("./poems.json");
+
     poems = await response.json();
     renderPoems(poems);
   } catch (err) {
@@ -87,4 +88,5 @@ savePoemBtn.addEventListener("click", () => {
 
 // Load poems on page load
 loadPoems();
+
 
