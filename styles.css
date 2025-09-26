@@ -13,6 +13,9 @@ body {
   padding: 1rem;
   max-width: 900px;
   margin: auto;
+  background: url("stars.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
 }
 
 /* ===== Header ===== */
@@ -171,6 +174,7 @@ header a {
 #nav-buttons button:hover {
   background: #555;
 }
+
 
 
 
