@@ -1,115 +1,137 @@
-body {
+/* Reset */
+body, html {
   margin: 0;
-  font-family: "Georgia", serif;
-  background: #0c0c0c;
-  color: #f0f0f0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  color: #fff;
+  height: 100%;
 }
 
-/* Hero Banner */
+/* Immersive background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: url("image_cosmic.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #f1f1f1;
+
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: -1;
+}
+
+/* Hero section */
 .hero {
-  position: relative;
-  height: 70vh;
-  background: url("image_hero.jpg") no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-}
-
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 15px;
+  padding: 100px 20px 60px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: #ffcc70;
+  font-size: 3.5rem;
+  color: #ffcc66;
+  margin: 0;
 }
 
 .tagline {
   font-style: italic;
-  margin-top: 0.5rem;
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #e0e0e0;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
+  margin-top: 20px;
+  padding: 12px 24px;
   background: #6c63ff;
   color: white;
-  border-radius: 8px;
   text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
 }
 
 .btn:hover {
-  background: #574fd6;
+  background: #4e46d1;
 }
 
 /* Search */
-.search-section {
+.search-bar {
   text-align: center;
-  padding: 1rem;
+  margin: 30px 0;
 }
 
-#search {
-  padding: 0.8rem;
+.search-bar input {
   width: 60%;
+  padding: 12px;
+  font-size: 1rem;
   border-radius: 8px;
   border: none;
-  font-size: 1rem;
 }
 
-/* Admin */
+/* Admin button */
 .admin-btn {
-  margin: 1rem;
-  text-align: left;
-}
-
-.admin-btn button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
   background: #333;
   color: #fff;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.admin-btn button:hover {
+.admin-btn:hover {
   background: #555;
 }
 
-/* Poems */
-.poems-container {
+/* Poems grid */
+.poems-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.poem-card {
-  background: #1a1a1a;
+.poems-grid .poem-card {
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  transition: transform 0.3s;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
 }
 
-.poem-card:hover {
-  transform: scale(1.03);
+.poems-grid .poem-card:hover {
+  transform: scale(1.05);
 }
 
-.poem-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.poem-card h3 {
+  color: #ffcc66;
+  margin-top: 0;
 }
 
-.poem-content {
-  padding: 1rem;
+.poem-card p {
+  font-size: 0.95rem;
+  color: #ddd;
 }
 
-.poem-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffcc70;
+.poem-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+.poem-card a:hover {
+  text-decoration: underline;
 }

@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Echoes & Horizons</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="scripts.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Hero Section -->
   <header class="hero">
-    <div class="hero-overlay">
-      <h1>Echoes & Horizons</h1>
-      <p class="tagline">“The depth of gratitude is measured by the echoes of a humble heart”</p>
-      <a href="#archive" class="btn">Enter the Archive</a>
-    </div>
+    <h1>Echoes & Horizons</h1>
+    <p class="tagline">“The depth of gratitude is measured by the echoes of a humble heart”</p>
+    <a href="#archive" class="btn">Enter the Archive</a>
   </header>
 
-  <!-- Search -->
-  <section class="search-section">
-    <input type="text" id="search" placeholder="Search poems, phrases, words..." />
-  </section>
+  <main id="archive">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search poems, phrases, words...">
+    </div>
 
-  <!-- Admin -->
-  <div class="admin-btn">
-    <button onclick="window.location.href='admin.html'">Admin Login</button>
-  </div>
+    <button class="admin-btn" onclick="window.location.href='admin.html'">Admin Login</button>
 
-  <!-- Poems -->
-  <main id="archive" class="poems-container"></main>
+    <div id="poems-container" class="poems-grid">
+      <!-- Poems will be loaded here -->
+    </div>
+  </main>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
