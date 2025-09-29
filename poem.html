@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Poem - Echoes & Horizons</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="poem.js"></script>
 </head>
 <body>
-  <div class="poem-nav">
-    <button onclick="goHome()">🏠 Home</button>
-    <button onclick="goPrev()">⬅️ Previous</button>
-    <button onclick="goNext()">➡️ Next</button>
-  </div>
-  <main id="poem-container" class="poem-view"></main>
-  
-  <div class="poem-hero" style="background-image: url('image_hero.jpg');">
+  <!-- The poem hero will display the image as background -->
+  <div class="poem-hero">
     <div class="poem-overlay">
-      <div id="poem-container"></div>
+      <div id="poem-container">Loading poem…</div>
+
+      <div class="poem-nav">
+        <button id="btn-back">Back</button>
+        <button id="btn-prev">Previous</button>
+        <button id="btn-home">Home</button>
+        <button id="btn-next">Next</button>
+      </div>
     </div>
   </div>
-  
+
+  <script src="poem.js"></script>
 </body>
 </html>
+
+
