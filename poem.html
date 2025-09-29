@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Poem - Echoes & Horizons</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes & Horizons - Poem</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Georgia', serif;
+      color: #fff;
+    }
+
+    .poem-hero {
+      position: relative;
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .poem-overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    #poem-container h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #ffd27d;
+    }
+
+    #poem-container .poem-content {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+
+    .poem-nav {
+      margin-top: 30px;
+    }
+
+    .poem-nav button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .poem-nav button:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  </style>
 </head>
 <body>
-  <!-- The poem hero will display the image as background -->
   <div class="poem-hero">
     <div class="poem-overlay">
       <div id="poem-container">Loading poem…</div>
@@ -24,5 +82,6 @@
   <script src="poem.js"></script>
 </body>
 </html>
+
 
 
