@@ -1,20 +1,20 @@
 [
   {
     "id": "1",
-    "title": "The Dawn",
-    "content": "When the sun breaks the night,\nHope rises with its light...",
-    "image": "image_hero.jpg"
+    "title": "The Departure",
+    "content": "I left long ago\nI didn't go with the flow\nThe voice came from within\nKept pleading, kept insisting therein\nResolute, I severed ties\nCutting ✂ loose that past with a final goodbye\nThe road behind me faded to dust\nAnd when I crossed\nI burned the bridges behind me\nSo that if I ever thought of going back\nThere would be no way",
+    "image": "images/departure.jpg"
   },
   {
     "id": "2",
-    "title": "Echoes in the Wind",
-    "content": "Whispers drift through the canyon of my heart,\nLingering like forgotten songs...",
-    "image": "image_boat.jpg"
+    "title": "Home",
+    "content": "“I love you...”\nCame the whisper —\nSoft and tender in my ear.\nIt brought a wave — calm and soothing —\nA hush that settled my fear.\n\nFor a moment —\nOr should I say... a few long moments —\nThe world slowed to stillness.\nTime held its breath.\nThe clock had hit pause.\n\nI indulged in the heavenly warmth.\nMy heart exhaled —\nIt felt at home.\nAnd all the cold I’d carried\nMelted into the air.\n\nThe shivers faded.\nPeace wrapped around me\nLike a quiet cloud.\n\nFinally...\nHere I was —\nHome.",
+    "image": "images/home.jpg"
   },
   {
     "id": "3",
-    "title": "Silent Shores",
-    "content": "The ocean holds its breath at dawn,\nWaiting for the sun to rise...",
-    "image": "image_cosmic.jpg"
+    "title": "My Cry",
+    "content": "They say the end of the world is nigh\nAnd I want to go to heaven when I die\nI lift my eyes to look up on high\nAnd bid the world a quick bye\nI search to behold his compassionate eye\nBut His face turns away with a sigh\nBecause the life I lived was a lie",
+    "image": "images/mycry.jpg"
   }
 ]
