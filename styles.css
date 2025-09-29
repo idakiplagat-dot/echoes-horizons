@@ -1,220 +1,140 @@
-/* Reset */
-body, html {
+/* General reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Georgia', serif;
-  color: #fff;
-  height: 100%;
+  box-sizing: border-box;
 }
 
-/* Immersive background */
+/* Body */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Georgia', serif;
-    background: url("image_cosmic.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: #f1f1f1;
-
+  font-family: 'Georgia', serif;
+  background-color: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* dark overlay */
-  z-index: -1;
-}
-
-/* Hero section */
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 60px 20px;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  color: #ffcc66;
-  margin: 0;
+  font-size: 3rem;
+  color: #f4c06d;
 }
 
 .tagline {
   font-style: italic;
-  margin: 15px 0;
-  font-size: 1.2rem;
-  color: #e0e0e0;
+  color: #d1d1d1;
+  margin: 10px 0 20px;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #6c63ff;
+.archive-btn {
+  background: #6a5acd;
   color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
   text-decoration: none;
-  border-radius: 8px;
   font-weight: bold;
-  transition: 0.3s ease;
 }
 
-.btn:hover {
-  background: #4e46d1;
+.archive-btn:hover {
+  background: #836fff;
 }
 
-/* Search */
-.search-bar {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.search-bar input {
-  width: 60%;
-  padding: 12px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: none;
-}
-
-/* Admin button */
-.admin-btn {
-  display: block;
-  margin: 10px auto;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  background: #333;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.admin-btn:hover {
-  background: #555;
-}
-
-/* Poems grid */
+/* Poems Grid */
 .poems-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
-.poems-grid .poem-card {
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
+.poem-card {
+  background: #111;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-.poems-grid .poem-card:hover {
-  transform: scale(1.05);
-}
-
-.poem-card h3 {
-  color: #ffcc66;
-  margin-top: 0;
+.poem-card h2 {
+  color: #f4c06d;
+  margin-bottom: 10px;
 }
 
 .poem-card p {
-  font-size: 0.95rem;
-  color: #ddd;
+  color: #ccc;
+  font-size: 0.9rem;
 }
 
-.poem-card a {
+.read-btn {
   display: inline-block;
   margin-top: 10px;
-  color: #6c63ff;
+  background: #6a5acd;
+  padding: 8px 15px;
+  border-radius: 6px;
   text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
 }
 
-.poem-card a:hover {
-  text-decoration: underline;
-}
-.poem-hero {
-  position: relative;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.read-btn:hover {
+  background: #836fff;
 }
 
-.poem-overlay {
-  background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 800px;
+/* Admin button */
+.admin-btn {
+  background: #222;
+  color: white;
+  padding: 10px 15px;
+  margin: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.admin-btn:hover {
+  background: #444;
+}
+
+/* Poem Page */
+.poem-container {
+  flex: 1;
+  padding: 40px;
   text-align: center;
 }
 
-.poem-overlay h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #f8d57e; /* golden tone */
+.poem-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #f4c06d;
 }
 
-.poem-overlay p {
+.poem-container p {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #f1f1f1;
-  white-space: pre-line;
-}
-/* POEM PAGE: full-image hero with overlay */
-.poem-hero {
-  position: relative;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-image .6s ease;
 }
 
-/* make sure the overlay sits on top of the background */
-.poem-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45); /* darken image for readability */
-  z-index: 0;
+/* Navigation */
+.navigation {
+  background: #111;
+  padding: 15px;
+  text-align: center;
 }
 
-/* overlay content */
-.poem-overlay {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  width: calc(100% - 40px);
-  padding: 2rem;
-  margin: 2rem;
-  border-radius: 12px;
-  text-align: left;
-  background: rgba(0,0,0,0.20); /* subtle glass behind text */
-  backdrop-filter: blur(4px);
-  color: #f5f5f5;
-  box-shadow: 0 10px 36px rgba(0,0,0,0.6);
-  transition: opacity .4s ease, transform .4s ease;
+.navigation button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* headings and text */
-.poem-overlay h2 { color: #ffd77a; margin:0 0 .6rem 0; font-size:2rem; }
-.poem-overlay .poem-content { white-space: pre-line; line-height:1.85; font-size:1.05rem; color:#e9eef2; }
-
-/* nav */
-.poem-nav { margin-top: 1.25rem; display:flex; gap:.6rem; justify-content:flex-end; }
-.poem-nav button {
-  padding:.5rem .9rem; border-radius:8px; border:none; cursor:pointer;
-  background: rgba(255,255,255,0.06); color:#fff;
+.navigation button:hover {
+  background: #555;
 }
-.poem-nav button:disabled { opacity:.45; cursor:not-allowed; }
-
-

@@ -1,69 +1,55 @@
-const poems = [
-  {
-    id: 1,
-    title: "The Dawn",
-    content: "When the sun breaks the night,\nHope rises with its light...",
-    image: "image_hero.jpg"
-  },
-  {
-    id: 2,
-    title: "Echoes in the Wind",
-    content: "Whispers drift through the canyon of my heart,\nLingering like forgotten songs...",
-    image: "image_boat.jpg"
-  },
-  {
-    id: 3,
-    title: "Silent Shores",
-    content: "The ocean holds its breath at dawn,\nWaiting for the sun to rise...",
-    image: "image_cosmic.jpg"
-  }
-];
+let poems = [];
+let currentIndex = -1;
 
-// ✅ Escape text safely
-function safeText(text) {
-  const div = document.createElement("div");
-  div.textContent = text;
-  return div.innerHTML;
-}
+async function loadPoem() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-const params = new URLSearchParams(window.location.search);
-let currentId = parseInt(params.get("id")) || 1;
-const container = document.getElementById("poem-container");
+  try {
+    const response = await fetch("poems.json");
+    poems = await response.json();
+    const poem = poems.find(p => p.id === id);
+    currentIndex = poems.findIndex(p => p.id === id);
 
-function loadPoem(id) {
-  const poem = poems.find(p => p.id === id);
-  if (!poem) return;
-
-  // Load text content only
-  container.innerHTML = `
-    <h2>${safeText(poem.title)}</h2>
-    <div class="poem-content">${safeText(poem.content).replace(/\n/g, "<br>")}</div>
-  `;
-
-  // Set background image
-  const hero = document.querySelector(".poem-hero");
-  if (hero && poem.image) {
-    hero.style.backgroundImage = `url('${poem.image}')`;
+    const container = document.getElementById("poem-container");
+    if (poem) {
+      container.innerHTML = `
+        <h1>${poem.title}</h1>
+        <p>${poem.content.replace(/\n/g, "<br>")}</p>
+      `;
+    } else {
+      container.innerHTML = "<p>Poem not found.</p>";
+    }
+  } catch (err) {
+    console.error("Error loading poem:", err);
+    document.getElementById("poem-container").innerHTML = "<p>Failed to load poem.</p>";
   }
 }
 
-loadPoem(currentId);
+function goHome() {
+  window.location.href = "index.html";
+}
 
-// 🔹 Navigation
-document.getElementById("btn-back").onclick = () => history.back();
-document.getElementById("btn-home").onclick = () => (window.location.href = "index.html");
-document.getElementById("btn-prev").onclick = () => {
-  if (currentId > 1) {
-    currentId--;
-    loadPoem(currentId);
+function goBack() {
+  window.history.back();
+}
+
+function goPrev() {
+  if (currentIndex > 0) {
+    const prevPoem = poems[currentIndex - 1];
+    window.location.href = `poem.html?id=${prevPoem.id}`;
+  } else {
+    alert("This is the first poem.");
   }
-};
-document.getElementById("btn-next").onclick = () => {
-  if (currentId < poems.length) {
-    currentId++;
-    loadPoem(currentId);
+}
+
+function goNext() {
+  if (currentIndex < poems.length - 1) {
+    const nextPoem = poems[currentIndex + 1];
+    window.location.href = `poem.html?id=${nextPoem.id}`;
+  } else {
+    alert("This is the last poem.");
   }
-};
+}
 
-
-
+document.addEventListener("DOMContentLoaded", loadPoem);
