@@ -11,14 +11,14 @@
   <header class="hero">
     <h1>Echoes & Horizons</h1>
     <p class="tagline">“The depth of gratitude is measured by the echoes of a humble heart”</p>
-    <a href="index.html" class="archive-btn">Enter the Archive</a>
+    <a href="#archive" class="btn">Enter the Archive</a>
   </header>
 
-  <main>
+  <main id="archive">
     <input type="text" id="search" placeholder="Search poems, phrases, words...">
-    <button onclick="adminLogin()" class="admin-btn">Admin Login</button>
+    <button class="admin-btn" onclick="loginAdmin()">Admin Login</button>
 
-    <div id="poems-list" class="poems-grid">
+    <div class="poem-list" id="poem-list">
       <!-- Poems load here -->
     </div>
   </main>
