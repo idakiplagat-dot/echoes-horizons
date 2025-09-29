@@ -3,20 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poem - Echoes & Horizons</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="poem.js"></script>
+  <title>Poem</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      color: #fff;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .poem-container {
+      max-width: 800px;
+      margin: 120px auto 60px;
+      padding: 20px;
+      /* background removed for clean overlay effect */
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #f1c27d;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    }
+
+    pre {
+      white-space: pre-wrap;
+      font-size: 1.2em;
+      line-height: 1.8;
+      text-align: center;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Buttons */
+    .home-btn, .back-btn, .next-btn, .prev-btn {
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+      z-index: 100;
+      position: fixed;
+    }
+
+    .home-btn { top: 20px; right: 20px; }
+    .back-btn { bottom: 20px; left: 20px; }
+    .next-btn { bottom: 20px; right: 20px; }
+    .prev-btn { bottom: 20px; left: 50%; transform: translateX(-50%); }
+
+    .home-btn:hover,
+    .back-btn:hover,
+    .next-btn:hover,
+    .prev-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  </style>
 </head>
 <body>
-  <div class="poem-content" id="poem-container">
-    <!-- Loaded dynamically -->
+  <div class="poem-container">
+    <h1 id="poem-title"></h1>
+    <pre id="poem-content"></pre>
   </div>
 
-  <div class="nav-buttons">
-    <button onclick="goBack()">Back</button>
-    <button onclick="goPrev()">Previous</button>
-    <button onclick="goHome()">Home</button>
-    <button onclick="goNext()">Next</button>
-  </div>
+  <button class="home-btn" onclick="goHome()">Home</button>
+  <button class="back-btn" onclick="goBack()">Back</button>
+  <button class="prev-btn" onclick="prevPoem()">Previous</button>
+  <button class="next-btn" onclick="nextPoem()">Next</button>
+
+  <script src="poem.js"></script>
 </body>
 </html>
