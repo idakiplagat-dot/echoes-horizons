@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archive | Echoes & Horizons</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: url('image_cosmic.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #f6d16b;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    p.tagline {
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ddd;
+      text-align: center;
+    }
+
+    .poem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .poem-card {
+      background: rgba(20, 20, 20, 0.85);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .poem-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    .poem-card h2 {
+      color: #f6d16b;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .poem-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .home-btn {
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>The Archive</h1>
+    <p class="tagline">Explore the echoes of the past, preserved on the horizons of words...</p>
+
+    <div class="poem-grid" id="poem-list">
+      <!-- JS will inject poems here -->
+    </div>
+
+    <button class="home-btn" onclick="window.location.href='index.html'">← Back Home</button>
+  </div>
+
+  <script src="archive.js"></script>
+</body>
+</html>

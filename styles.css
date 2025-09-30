@@ -1,128 +1,97 @@
-/* General Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { height: 100%; font-family: 'Georgia', serif; color: #fff; }
+/* Reset & basics */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Georgia", serif;
+  color: #fff;
+}
 
-/* Hero Section */
+/* Full hero background */
 .hero {
-  background: url("image_cosmic.jpg") no-repeat center/cover;
+  height: 100vh;
+  background: url("image_boat.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 5rem 2rem;
-  color: #ffdd88;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
-.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-.tagline { font-style: italic; margin-bottom: 1.5rem; }
-.hero .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #6b5bff;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-.hero .btn:hover { background: #4c3dcc; }
 
-/* Archive */
-#archive { padding: 2rem; text-align: center; }
-#search {
-  width: 80%;
-  max-width: 500px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 1rem;
+/* Glassmorphism overlay */
+.overlay-card {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
-.admin-btn {
-  display: block;
-  margin: 1rem auto;
-  padding: 8px 16px;
-  background: #333;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.admin-btn:hover { background: #555; }
 
-/* Poem List (Index) */
-.poem-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+/* Title & tagline */
+.site-title {
+  font-size: 3rem;
+  margin: 0 0 15px;
+  color: #f5c76b;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
 }
-.poem-card {
-  background: rgba(0,0,0,0.7);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: left;
-}
-.poem-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #ffdd88;
-}
-.poem-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #ddd;
-}
-.poem-card .read-more {
-  display: inline-block;
-  padding: 8px 14px;
-  background: #6b5bff;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-}
-.poem-card .read-more:hover { background: #4c3dcc; }
 
-/* Poem Page */
-body {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-.poem-content {
-  text-align: center;
-  padding: 3rem 2rem;
-}
-.poem-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  color: #ffdd88;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-.poem-content p {
+.tagline {
   font-size: 1.3rem;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  font-style: italic;
+  margin-bottom: 25px;
+  color: #eee;
 }
 
-/* Navigation */
-.nav-buttons {
-  position: fixed;
-  bottom: 20px;
-  width: 100%;
+/* Buttons */
+.hero-actions {
   display: flex;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 25px;
 }
-.nav-buttons button {
-  background: rgba(0,0,0,0.6);
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
+
+.hero-actions button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.3);
   color: #fff;
-  font-size: 1rem;
+  padding: 12px 25px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s;
 }
-.nav-buttons button:hover {
-  background: rgba(255, 215, 100, 0.8);
-  color: #000;
+
+.hero-actions button:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.admin-btn {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Search box */
+.search-box input {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+.search-box input::placeholder {
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-title { font-size: 2rem; }
+  .tagline { font-size: 1rem; }
 }
