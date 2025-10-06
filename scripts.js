@@ -1,24 +1,19 @@
-async function loadPoems() {
-  try {
-    const response = await fetch("poems.json");
-    const poems = await response.json();
-    const container = document.getElementById("poem-list");
+document.addEventListener("DOMContentLoaded", () => {
+  // Fade-in animation on page load
+  document.body.style.opacity = 0;
+  document.body.style.transition = "opacity 1.2s ease";
+  setTimeout(() => {
+    document.body.style.opacity = 1;
+  }, 100);
 
-    container.innerHTML = poems.map(poem => `
-      <div class="poem-card">
-        <h2>${poem.title}</h2>
-        <p>${poem.content.substring(0, 100)}...</p>
-        <a href="poem.html?id=${poem.id}" class="read-more">Read More</a>
-      </div>
-    `).join("");
-  } catch (err) {
-    console.error("Error loading poems:", err);
-    document.getElementById("poem-list").innerHTML = "<p>Failed to load poems.</p>";
-  }
-}
-
-function loginAdmin() {
-  alert("Admin login not yet implemented!");
-}
-
-loadPoems();
+  // Smooth scroll for in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+});

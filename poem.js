@@ -1,53 +1,41 @@
 let poems = [];
-let currentIndex = -1;
+let currentIndex = 0;
 
-async function loadPoem() {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("poems.json")
+    .then(res => res.json())
+    .then(data => {
+      poems = data;
+      const savedIndex = parseInt(localStorage.getItem("currentPoem")) || 0;
+      currentIndex = savedIndex;
+      displayPoem(poems[currentIndex]);
+    });
+});
 
-  try {
-    const response = await fetch("poems.json?nocache=" + new Date().getTime());
-    if (!response.ok) throw new Error("Failed to load poems.json");
-    poems = await response.json();
-
-    const poem = poems.find((p) => p.id === id);
-    currentIndex = poems.findIndex((p) => p.id === id);
-
-    const titleElement = document.getElementById("poem-title");
-    const contentElement = document.getElementById("poem-content");
-
-    if (poem) {
-      titleElement.textContent = poem.title;
-      contentElement.textContent = poem.content;
-
-      // 🌄 set background image for this poem
-      if (poem.image) {
-        document.body.style.backgroundImage = `url('${poem.image}')`;
-      }
-    } else {
-      titleElement.textContent = "Poem Not Found";
-      contentElement.textContent = "";
-      document.body.style.backgroundImage = ""; // fallback
-    }
-  } catch (error) {
-    console.error("Error loading poem:", error);
-  }
+function displayPoem(poem) {
+  const container = document.getElementById("poem-container");
+  container.innerHTML = `
+    <h2>${poem.title}</h2>
+    <p>${poem.content}</p>
+  `;
 }
 
-// navigation
-function goHome() { window.location.href = "index.html"; }
-function goBack() { window.history.back(); }
-function prevPoem() {
+function goPrev() {
   if (currentIndex > 0) {
-    const prevPoem = poems[currentIndex - 1];
-    window.location.href = `poem.html?id=${prevPoem.id}`;
-  }
-}
-function nextPoem() {
-  if (currentIndex < poems.length - 1) {
-    const nextPoem = poems[currentIndex + 1];
-    window.location.href = `poem.html?id=${nextPoem.id}`;
+    currentIndex--;
+    localStorage.setItem("currentPoem", currentIndex);
+    displayPoem(poems[currentIndex]);
   }
 }
 
-loadPoem();
+function goNext() {
+  if (currentIndex < poems.length - 1) {
+    currentIndex++;
+    localStorage.setItem("currentPoem", currentIndex);
+    displayPoem(poems[currentIndex]);
+  }
+}
+
+function goHome() {
+  window.location.href = "archive.html";
+}

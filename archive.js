@@ -1,30 +1,33 @@
-async function loadArchive() {
-  try {
-    const response = await fetch("poems.json?nocache=" + new Date().getTime());
-    if (!response.ok) throw new Error("Failed to load poems.json");
+document.addEventListener("DOMContentLoaded", () => {
+  const poemList = document.getElementById("poem-list");
 
-    const poems = await response.json();
-    const list = document.getElementById("poem-list");
+  fetch("poems.json")
+    .then(res => res.json())
+    .then(data => {
+      data.forEach((poem, index) => {
+        const card = document.createElement("div");
+        card.classList.add("poem-card");
 
-    poems.forEach(poem => {
-      // make a preview (first 20 words or so)
-      const preview = poem.content.split(" ").slice(0, 20).join(" ") + "...";
+        // Generate excerpt dynamically from "content"
+        let excerptSource = poem.content || "";
+        let excerpt = excerptSource.replace(/\n/g, " ").substring(0, 120);
+        if (excerptSource.length > 120) excerpt += "...";
 
-      const card = document.createElement("div");
-      card.className = "poem-card";
-      card.onclick = () => window.location.href = `poem.html?id=${poem.id}`;
+        card.innerHTML = `
+          <h3>${poem.title}</h3>
+          <p>${excerpt}</p>
+        `;
 
-      card.innerHTML = `
-        <h2>${poem.title}</h2>
-        <p>${preview}</p>
-      `;
+        card.addEventListener("click", () => {
+          localStorage.setItem("currentPoem", index);
+          window.location.href = "poem.html";
+        });
 
-      list.appendChild(card);
+        poemList.appendChild(card);
+      });
+    })
+    .catch(err => {
+      poemList.innerHTML = `<p style="color:#f1c40f;">Error loading poems. Please check poems.json.</p>`;
+      console.error(err);
     });
-  } catch (err) {
-    console.error("Error loading archive:", err);
-    document.getElementById("poem-list").innerHTML = "<p>Failed to load poems.</p>";
-  }
-}
-
-loadArchive();
+});
