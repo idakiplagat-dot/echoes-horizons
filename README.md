@@ -43,5 +43,6 @@ Typography: Playfair Display (titles) + Lora (body)
 Tone: Warm, literary, reflective
 
 
-Author
-Crafted with reflection and code by Ida.
+Author;
+
+Crafted with reflection by Ida.
