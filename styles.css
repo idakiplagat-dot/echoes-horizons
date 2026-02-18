@@ -227,7 +227,7 @@ body {
 }
 
 .poem-card {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,1);
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -248,7 +248,7 @@ body {
 
 .poem-card p {
   color: #ddd;
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   font-family: 'Lora', serif;
 }
 
